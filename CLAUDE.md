@@ -2,6 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## IMPORTANT: Docs-First Rule
+
+**Before generating any code, Claude Code MUST first check the `/docs` directory for relevant documentation files and follow the guidance found there.** Always read and apply the applicable docs before writing or modifying any code.
+
+- /docs/ui.md
+- /docs/data-fetching.md
+
 ## Project
 
 Next.js 16 app using the App Router, React 19, TypeScript, and Tailwind CSS v4. The actual app code lives in `teste_claudecode/`.
