@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { format } from "date-fns";
 import { Dumbbell, Clock } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -47,7 +48,12 @@ export default function WorkoutCard({ workout }: WorkoutCardProps) {
               <Dumbbell className="size-4 text-primary" />
             </div>
             <CardTitle className="truncate text-base">
-              {workout.name ?? "Untitled Workout"}
+              <Link
+                href={`/dashboard/workout/${workout.id}`}
+                className="hover:underline"
+              >
+                {workout.name ?? "Untitled Workout"}
+              </Link>
             </CardTitle>
           </div>
           <div className="flex shrink-0 items-center gap-3 text-sm text-muted-foreground">
