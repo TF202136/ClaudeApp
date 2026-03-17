@@ -4,6 +4,24 @@ import type { Exercise, Set as DrizzleSet, Workout, WorkoutExercise } from "@/ap
 import { and, eq, gte, inArray, lt } from "drizzle-orm";
 import { auth } from "@clerk/nextjs/server";
 
+export async function createWorkout(data: {
+  userId: string;
+  name?: string;
+  started_at?: Date;
+  completed_at?: Date;
+}) {
+  const [workout] = await db
+    .insert(workouts)
+    .values({
+      user_id: data.userId,
+      name: data.name,
+      started_at: data.started_at,
+      completed_at: data.completed_at,
+    })
+    .returning();
+  return workout;
+}
+
 export async function getUserWorkouts(date: Date) {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
