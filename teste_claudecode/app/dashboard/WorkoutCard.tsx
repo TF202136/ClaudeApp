@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { Dumbbell, Clock, ChevronDown } from "lucide-react";
+import { Dumbbell, Clock } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
